@@ -4,3 +4,9 @@ c:\Users\even\documents\visual studio 2013\Projects\DEMApp\LoadMap\bin\LoadMap.p
 c:\Users\even\documents\visual studio 2013\Projects\DEMApp\LoadMap\obj\Debug\LoadMap.csprojResolveAssemblyReference.cache
 c:\Users\even\documents\visual studio 2013\Projects\DEMApp\LoadMap\obj\Debug\LoadMap.dll
 c:\Users\even\documents\visual studio 2013\Projects\DEMApp\LoadMap\obj\Debug\LoadMap.pdb
+D:\WorkProgram\DEMApp\LoadMap\bin\LoadMap.dll.config
+D:\WorkProgram\DEMApp\LoadMap\bin\LoadMap.dll
+D:\WorkProgram\DEMApp\LoadMap\bin\LoadMap.pdb
+D:\WorkProgram\DEMApp\LoadMap\obj\Debug\LoadMap.csprojResolveAssemblyReference.cache
+D:\WorkProgram\DEMApp\LoadMap\obj\Debug\LoadMap.dll
+D:\WorkProgram\DEMApp\LoadMap\obj\Debug\LoadMap.pdb
