@@ -1,0 +1,14 @@
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\bin\Debug\DEMApp.exe.config
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\bin\Debug\DEMApp.exe
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\bin\Debug\DEMApp.pdb
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\obj\Debug\DEMApp.csprojResolveAssemblyReference.cache
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\obj\Debug\MainWindow.baml
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\obj\Debug\MainWindow.g.cs
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\obj\Debug\App.g.cs
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\obj\Debug\DEMApp_MarkupCompile.cache
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\obj\Debug\DEMApp.g.resources
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\obj\Debug\DEMApp.Properties.Resources.resources
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\obj\Debug\DEMApp.csproj.GenerateResource.Cache
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\obj\Debug\DEMApp.exe
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\obj\Debug\DEMApp.pdb
+c:\users\even\documents\visual studio 2013\Projects\DEMApp\DEMApp\bin\Debug\Xceed.Wpf.Toolkit.dll

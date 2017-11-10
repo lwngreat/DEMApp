@@ -1,0 +1,19 @@
+﻿/*隐藏logo*/
+.map .ol-zoom,.map .ol-attribution,.map .ol-scale-line {
+    visibility: collapse;
+}
+.map{
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+}
+.coord{
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    height:20px;
+    min-width:340px;
+    background-color:white;
+}

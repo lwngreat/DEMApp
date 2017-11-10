@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEMApp", "DEMApp\DEMApp.csproj", "{DDF91BC7-87AE-4F23-981C-F3E9699DC285}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadMap", "LoadMap\LoadMap.csproj", "{67F10A32-150B-49E7-9BF1-B9C8843F7F1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDF91BC7-87AE-4F23-981C-F3E9699DC285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDF91BC7-87AE-4F23-981C-F3E9699DC285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDF91BC7-87AE-4F23-981C-F3E9699DC285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDF91BC7-87AE-4F23-981C-F3E9699DC285}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67F10A32-150B-49E7-9BF1-B9C8843F7F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67F10A32-150B-49E7-9BF1-B9C8843F7F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67F10A32-150B-49E7-9BF1-B9C8843F7F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67F10A32-150B-49E7-9BF1-B9C8843F7F1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
