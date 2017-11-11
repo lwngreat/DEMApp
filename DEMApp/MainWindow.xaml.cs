@@ -1,5 +1,6 @@
 ﻿using DEMApp.BLL;
 using DEMApp.Model;
+using DEMApp.UC;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -25,16 +26,23 @@ namespace DEMApp
     {
         private string filePath;
         private MatImage matImage;
+        private LinearColors curCorlor;
         public MainWindow()
         {
             InitializeComponent();
             ReadASCFile.DataLoadState += ReadASCFile_DataLoadState;
-            
+            rcombColor.combColor.SelectionChanged += combColor_SelectionChanged;
+        }
+
+        private void combColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
+            curCorlor = cb.SelectedItem as LinearColors;
         }
 
         private void ReadASCFile_DataLoadState(double per, string msg)
         {
-            if (per <1)
+            if (per < 1)
             {
                 bi_busying.IsBusy = true;
             }
@@ -42,7 +50,7 @@ namespace DEMApp
             {
                 bi_busying.IsBusy = false;
             }
-        }     
+        }
 
         private void btnLoadFile_Click(object sender, RoutedEventArgs e)
         {
@@ -54,13 +62,13 @@ namespace DEMApp
                 {
                     filePath = oFileDialog.FileName;
                     matImage = ReadASCFile.read(filePath);
-                    imgMain.Source = matImage.ToBitMap();
+                    imgMain.Source = matImage.ToBitMap(curCorlor);
                 }
                 catch (Exception ex)
                 {
 
                 }
-                
+
             }
         }
 
@@ -72,8 +80,8 @@ namespace DEMApp
             if (matImage != null && matImage.data != null)
             {
                 SlopeCal slopeCal = new SlopeCal(matImage);
-                aspectMatImage =    slopeCal.calAspect();
-                imgDeputy.Source = aspectMatImage.ToBitMap();
+                aspectMatImage = slopeCal.calAspect();
+                imgDeputy.Source = aspectMatImage.ToBitMap(curCorlor);
             }
             else
             {
@@ -88,7 +96,7 @@ namespace DEMApp
             {
                 var slopeCal = new SlopeCal(matImage);
                 slopeMatImage = slopeCal.calSlope();
-                imgDeputy.Source = slopeMatImage.ToBitMap();
+                imgDeputy.Source = slopeMatImage.ToBitMap(curCorlor);
             }
             else
             {
@@ -98,13 +106,16 @@ namespace DEMApp
 
         private void btnSaveSlope_Click(object sender, RoutedEventArgs e)
         {
-            if(slopeMatImage!=null){
+            if (slopeMatImage != null)
+            {
                 SaveMatImage saveImage = new SaveMatImage(slopeMatImage);
                 saveImage.Save();
-            }   else{
+            }
+            else
+            {
                 MessageBox.Show("请先计算坡度");
             }
-            
+
         }
 
         private void btnSaveAspect_Click(object sender, RoutedEventArgs e)

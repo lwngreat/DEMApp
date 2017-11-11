@@ -2,6 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:uc="clr-namespace:DEMApp.UC"
         Title="MainWindow" Height="476.866" Width="722.015">
     <Grid>
         <Grid.RowDefinitions>
@@ -22,6 +23,8 @@
             <Button Name="btnSaveSlope" Grid.Column="2" Click="btnSaveSlope_Click">保存坡度</Button>
             <Button Name="btnAspect"  Grid.Column="3" Click="btnAspect_Click">坡向</Button>
             <Button Name="btnSaveAspect"  Grid.Column="4" Click="btnSaveAspect_Click">保存坡向</Button>
+            <uc:RibbonComboBox Grid.Column="5" x:Name="rcombColor" HorizontalAlignment="Stretch">               
+            </uc:RibbonComboBox>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -37,6 +40,5 @@
             </Grid>
         </Grid>
         <xctk:BusyIndicator Grid.Row="0" Grid.RowSpan="4" Name="bi_busying"  IsBusy="False" Visibility="Visible" BusyContent="加载中...." />
-
     </Grid>
 </Window>

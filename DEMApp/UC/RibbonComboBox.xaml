@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="DEMApp.UC.RibbonComboBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="300">
+    <Grid x:Name="mainGrid">
+        <ComboBox Grid.Column="5" x:Name="combColor" HorizontalAlignment="Stretch" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate >
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="White" Margin="3">                       
+                        <Rectangle HorizontalAlignment="Stretch" Height="20" Width="{Binding ElementName=mainGrid,Path=ActualWidth}" >
+                            <Rectangle.Fill>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Color="{Binding color1}" />
+                                    <GradientStop Color="{Binding color2}" Offset="0.2"/>
+                                    <GradientStop Color="{Binding color3}" Offset="0.4"/>
+                                    <GradientStop Color="{Binding color4}" Offset="0.6"/>
+                                    <GradientStop Color="{Binding color5}" Offset="0.8"/>
+                                    <GradientStop Color="{Binding color6}" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </Grid>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </Grid>
+</UserControl>
+

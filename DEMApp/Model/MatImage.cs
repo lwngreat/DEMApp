@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DEMApp.UC;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -119,7 +120,7 @@ namespace DEMApp.Model
             }
         }
         //public Image bitmap = new Bitmap(towidth, toheight);
-        public ImageSource ToBitMap()
+        public ImageSource ToBitMap(LinearColors colors)
         {
             try
             {
@@ -129,9 +130,8 @@ namespace DEMApp.Model
                     for (int j = 0; j < bmp.Width; j++)
                     {
                         double dem = data[i][j];
-                        int gray = normalizeDEM(dem);
-                        System.Drawing.Color newColor = System.Drawing.Color.FromArgb(gray, gray, gray);
-                        bmp.SetPixel(j, i, newColor);
+                        var c = normalizeDEM(dem, colors);
+                        bmp.SetPixel(j, i, c);
                     }
                 }
                 return BitmapToImageSource(bmp);
@@ -142,7 +142,7 @@ namespace DEMApp.Model
             }
         }
 
-        private int normalizeDEM(double dem)
+        private System.Drawing.Color normalizeDEM(double dem,LinearColors colors)
         {
             if (dem != NODATA_value&&maxData!=NODATA_value&&maxData>0)
             {
@@ -150,12 +150,14 @@ namespace DEMApp.Model
                 if (v < 0 || v > 255)
                 {
                     throw new Exception("异常值" + v);
-                }                     
-                return v;
+                }
+                var c = colors.getColor(v);
+                return System.Drawing.Color.FromArgb(c.R,c.G,c.B);  
+               // return v;
             }
             else
             {
-                return 0;
+                return System.Drawing.Color.Black;
             }
         }
 

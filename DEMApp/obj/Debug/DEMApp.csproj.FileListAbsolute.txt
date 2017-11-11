@@ -18,7 +18,6 @@ D:\WorkProgram\DEMApp\DEMApp\obj\Debug\DEMApp.pdb
 D:\WorkProgram\DEMApp\DEMApp\bin\Debug\DEMApp.exe
 D:\WorkProgram\DEMApp\DEMApp\bin\Debug\DEMApp.pdb
 D:\WorkProgram\DEMApp\DEMApp\bin\Debug\Xceed.Wpf.Toolkit.dll
-D:\WorkProgram\DEMApp\DEMApp\obj\Debug\DEMApp.csprojResolveAssemblyReference.cache
 D:\WorkProgram\DEMApp\DEMApp\obj\Debug\MainWindow.baml
 D:\WorkProgram\DEMApp\DEMApp\obj\Debug\MainWindow.g.cs
 D:\WorkProgram\DEMApp\DEMApp\obj\Debug\App.g.cs
@@ -26,3 +25,8 @@ D:\WorkProgram\DEMApp\DEMApp\obj\Debug\DEMApp_MarkupCompile.cache
 D:\WorkProgram\DEMApp\DEMApp\obj\Debug\DEMApp.g.resources
 D:\WorkProgram\DEMApp\DEMApp\obj\Debug\DEMApp.Properties.Resources.resources
 D:\WorkProgram\DEMApp\DEMApp\obj\Debug\DEMApp.csproj.GenerateResource.Cache
+D:\WorkProgram\DEMApp\DEMApp\obj\Debug\UC\RibbonComboBox.baml
+D:\WorkProgram\DEMApp\DEMApp\obj\Debug\UC\RibbonComboBox.g.cs
+D:\WorkProgram\DEMApp\DEMApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\WorkProgram\DEMApp\DEMApp\obj\Debug\DEMApp_MarkupCompile.lref
+D:\WorkProgram\DEMApp\DEMApp\obj\Debug\DEMApp.csprojResolveAssemblyReference.cache
