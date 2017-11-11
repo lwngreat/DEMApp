@@ -32,6 +32,7 @@ namespace DEMApp
             InitializeComponent();
             ReadASCFile.DataLoadState += ReadASCFile_DataLoadState;
             rcombColor.combColor.SelectionChanged += combColor_SelectionChanged;
+            btnEnableInit(false);
         }
 
         private void combColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -63,6 +64,8 @@ namespace DEMApp
                     filePath = oFileDialog.FileName;
                     matImage = ReadASCFile.read(filePath);
                     imgMain.Source = matImage.ToBitMap(curCorlor);
+                    legend.setValue(new LegendModel() { name = "DEM", lowValue = (int)matImage.minData, highVlaue = (int)matImage.maxData, colors = curCorlor });
+                    btnEnableInit(true);
                 }
                 catch (Exception ex)
                 {
@@ -70,6 +73,17 @@ namespace DEMApp
                 }
 
             }
+        }
+
+        private void btnEnableInit(bool enable)
+        {
+
+            btnAspect.IsEnabled = enable;
+            btnDEM.IsEnabled = enable;
+            btnSlope.IsEnabled = enable;
+            btnSaveAspect.IsEnabled = enable;
+            btnSaveSlope.IsEnabled = enable;
+
         }
 
 
@@ -81,11 +95,12 @@ namespace DEMApp
             {
                 SlopeCal slopeCal = new SlopeCal(matImage);
                 aspectMatImage = slopeCal.calAspect();
-                imgDeputy.Source = aspectMatImage.ToBitMap(curCorlor);
+                imgMain.Source = aspectMatImage.ToBitMap(curCorlor);
+                legend.setValue(new LegendModel() { name = "坡向", lowValue = (int)aspectMatImage.minData, highVlaue = (int)aspectMatImage.maxData, colors = curCorlor });
             }
             else
             {
-
+                MessageBox.Show("请先加载DEM数据");
             }
         }
 
@@ -96,11 +111,12 @@ namespace DEMApp
             {
                 var slopeCal = new SlopeCal(matImage);
                 slopeMatImage = slopeCal.calSlope();
-                imgDeputy.Source = slopeMatImage.ToBitMap(curCorlor);
+                imgMain.Source = slopeMatImage.ToBitMap(curCorlor);
+                legend.setValue(new LegendModel() { name = "坡度", lowValue = (int)slopeMatImage.minData, highVlaue = (int)slopeMatImage.maxData, colors = curCorlor });
             }
             else
             {
-
+                MessageBox.Show("请先加载DEM数据");
             }
         }
 
@@ -129,6 +145,24 @@ namespace DEMApp
             {
                 MessageBox.Show("请先计算坡向");
             }
+        }
+
+        private void btnDEM_Click(object sender, RoutedEventArgs e)
+        {
+            if (matImage != null && matImage.data != null)
+            {
+                imgMain.Source = matImage.ToBitMap(curCorlor);
+                legend.setValue(new LegendModel() { name = "DEM", lowValue = (int)matImage.minData, highVlaue = (int)matImage.maxData, colors = curCorlor });
+            }
+            else
+            {
+
+            }
+        }
+
+        private void menuClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

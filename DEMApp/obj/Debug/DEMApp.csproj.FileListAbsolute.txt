@@ -29,4 +29,5 @@ D:\WorkProgram\DEMApp\DEMApp\obj\Debug\UC\RibbonComboBox.baml
 D:\WorkProgram\DEMApp\DEMApp\obj\Debug\UC\RibbonComboBox.g.cs
 D:\WorkProgram\DEMApp\DEMApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\WorkProgram\DEMApp\DEMApp\obj\Debug\DEMApp_MarkupCompile.lref
-D:\WorkProgram\DEMApp\DEMApp\obj\Debug\DEMApp.csprojResolveAssemblyReference.cache
+D:\WorkProgram\DEMApp\DEMApp\obj\Debug\UC\LegendUC.baml
+D:\WorkProgram\DEMApp\DEMApp\obj\Debug\UC\LegendUC.g.cs

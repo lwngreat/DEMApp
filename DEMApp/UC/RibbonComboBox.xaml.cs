@@ -28,7 +28,6 @@ namespace DEMApp.UC
         }
         public void setColors(List<LinearColors> c)
         {
-
             colors = c;
             this.combColor.ItemsSource = colors;
         }

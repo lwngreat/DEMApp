@@ -3,42 +3,65 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:uc="clr-namespace:DEMApp.UC"
-        Title="MainWindow" Height="476.866" Width="722.015">
+        Title="MainWindow" Height="590" Width="780">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Button Name="btnLoadFile" Click="btnLoadFile_Click">加载</Button>
-            <Button Name="btnSlope" Grid.Column="1" Click="btnSlope_Click">坡度</Button>
-            <Button Name="btnSaveSlope" Grid.Column="2" Click="btnSaveSlope_Click">保存坡度</Button>
-            <Button Name="btnAspect"  Grid.Column="3" Click="btnAspect_Click">坡向</Button>
-            <Button Name="btnSaveAspect"  Grid.Column="4" Click="btnSaveAspect_Click">保存坡向</Button>
-            <uc:RibbonComboBox Grid.Column="5" x:Name="rcombColor" HorizontalAlignment="Stretch">               
-            </uc:RibbonComboBox>
-        </Grid>
+        <Menu VerticalAlignment="Stretch" VerticalContentAlignment="Center">
+            <MenuItem Header="文件">
+                <MenuItem Header="打开" Click="btnLoadFile_Click"></MenuItem>
+                <MenuItem Header="退出" Name="menuClose" Click="menuClose_Click">
+
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="显示">
+                <MenuItem Header="显示DEM" Click="btnDEM_Click"></MenuItem>
+                <MenuItem Header="显示坡度" Click="btnSlope_Click"></MenuItem>
+                <MenuItem Header="显示坡向" Click="btnAspect_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="150"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Grid>
-                <Image Name="imgMain"></Image>
-            </Grid>
-            <GridSplitter></GridSplitter>
+            <Border BorderBrush="Gray" BorderThickness="2">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="4*" MinHeight="200"/>
+                    </Grid.RowDefinitions>
+                    <Button Name="btnLoadFile" Grid.Row="0" Margin="0,3" Click="btnLoadFile_Click">加载DEM</Button>
+                    <Button Name="btnDEM" Grid.Row="1" Margin="0,3" Click="btnDEM_Click">DEM</Button>
+                    <Button Name="btnSlope" Grid.Row="2" Margin="0,3" Click="btnSlope_Click">计算坡度</Button>
+                    <Button Name="btnSaveSlope" Grid.Row="3" Margin="0,3" Click="btnSaveSlope_Click">保存坡度</Button>
+                    <Button Name="btnAspect"  Grid.Row="4" Margin="0,3" Click="btnAspect_Click">计算坡向</Button>
+                    <Button Name="btnSaveAspect"  Grid.Row="5" Margin="0,3" Click="btnSaveAspect_Click">保存坡向</Button>
+                    <uc:RibbonComboBox Grid.Row="6" x:Name="rcombColor"   HorizontalAlignment="Stretch">
+                    </uc:RibbonComboBox>
+                    <uc:LegendUC x:Name="legend" Grid.Row="7" VerticalAlignment="Bottom" HorizontalAlignment="Right"></uc:LegendUC>
+                </Grid>
+            </Border>
             <Grid Grid.Column="1">
-                <Image Name="imgDeputy"></Image>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Image Name="imgMain"></Image>
+
+                </Grid>
             </Grid>
+            <xctk:BusyIndicator Grid.Row="0" Grid.RowSpan="4" Name="bi_busying"  IsBusy="False" Visibility="Visible" BusyContent="加载中...." />
         </Grid>
-        <xctk:BusyIndicator Grid.Row="0" Grid.RowSpan="4" Name="bi_busying"  IsBusy="False" Visibility="Visible" BusyContent="加载中...." />
     </Grid>
+   
 </Window>

@@ -21,7 +21,7 @@ namespace DEMApp.Model
         public int NODATA_value = -9999;
         public List<List<double>> data;
         private double _maxData;
-        private double maxData
+        public double maxData
         {
             get
             {
@@ -42,7 +42,7 @@ namespace DEMApp.Model
         }
 
         private double _minData;
-        private double minData
+        public double minData
         {
             get
             {
