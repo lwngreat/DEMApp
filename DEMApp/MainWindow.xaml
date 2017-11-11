@@ -40,7 +40,7 @@
                         <RowDefinition Height="4*" MinHeight="200"/>
                     </Grid.RowDefinitions>
                     <Button Name="btnLoadFile" Grid.Row="0" Margin="0,3" Click="btnLoadFile_Click">加载DEM</Button>
-                    <Button Name="btnDEM" Grid.Row="1" Margin="0,3" Click="btnDEM_Click">DEM</Button>
+                    <Button Name="btnDEM" Grid.Row="1" Margin="0,3" Click="btnDEM_Click">显示DEM</Button>
                     <Button Name="btnSlope" Grid.Row="2" Margin="0,3" Click="btnSlope_Click">计算坡度</Button>
                     <Button Name="btnSaveSlope" Grid.Row="3" Margin="0,3" Click="btnSaveSlope_Click">保存坡度</Button>
                     <Button Name="btnAspect"  Grid.Row="4" Margin="0,3" Click="btnAspect_Click">计算坡向</Button>

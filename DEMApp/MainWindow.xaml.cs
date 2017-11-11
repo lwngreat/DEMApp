@@ -27,6 +27,7 @@ namespace DEMApp
         private string filePath;
         private MatImage matImage;
         private LinearColors curCorlor;
+        private LegendModel curLengend;
         public MainWindow()
         {
             InitializeComponent();
@@ -39,6 +40,15 @@ namespace DEMApp
         {
             ComboBox cb = sender as ComboBox;
             curCorlor = cb.SelectedItem as LinearColors;
+            
+            var mi = imgMain.Tag as MatImage;
+            if (mi != null && curLengend!=null)
+            {
+                curLengend.colors = curCorlor;
+                legend.setValue(curLengend);
+                imgMain.Source = mi.ToBitMap(curCorlor);
+            }
+            
         }
 
         private void ReadASCFile_DataLoadState(double per, string msg)
@@ -63,8 +73,10 @@ namespace DEMApp
                 {
                     filePath = oFileDialog.FileName;
                     matImage = ReadASCFile.read(filePath);
+                    imgMain.Tag = matImage;
                     imgMain.Source = matImage.ToBitMap(curCorlor);
-                    legend.setValue(new LegendModel() { name = "DEM", lowValue = (int)matImage.minData, highVlaue = (int)matImage.maxData, colors = curCorlor });
+                    curLengend = new LegendModel() { name = "DEM", lowValue = (int)matImage.minData, highVlaue = (int)matImage.maxData, colors = curCorlor };
+                    legend.setValue(curLengend);
                     btnEnableInit(true);
                 }
                 catch (Exception ex)
@@ -95,8 +107,10 @@ namespace DEMApp
             {
                 SlopeCal slopeCal = new SlopeCal(matImage);
                 aspectMatImage = slopeCal.calAspect();
+                imgMain.Tag = aspectMatImage;
                 imgMain.Source = aspectMatImage.ToBitMap(curCorlor);
-                legend.setValue(new LegendModel() { name = "坡向", lowValue = (int)aspectMatImage.minData, highVlaue = (int)aspectMatImage.maxData, colors = curCorlor });
+                curLengend = new LegendModel() { name = "坡向", lowValue = (int)aspectMatImage.minData, highVlaue = (int)aspectMatImage.maxData, colors = curCorlor };
+                legend.setValue(curLengend);
             }
             else
             {
@@ -111,8 +125,10 @@ namespace DEMApp
             {
                 var slopeCal = new SlopeCal(matImage);
                 slopeMatImage = slopeCal.calSlope();
+                imgMain.Tag = slopeMatImage;
                 imgMain.Source = slopeMatImage.ToBitMap(curCorlor);
-                legend.setValue(new LegendModel() { name = "坡度", lowValue = (int)slopeMatImage.minData, highVlaue = (int)slopeMatImage.maxData, colors = curCorlor });
+                curLengend = new LegendModel() { name = "坡度", lowValue = (int)slopeMatImage.minData, highVlaue = (int)slopeMatImage.maxData, colors = curCorlor };
+                legend.setValue(curLengend);
             }
             else
             {
@@ -151,8 +167,10 @@ namespace DEMApp
         {
             if (matImage != null && matImage.data != null)
             {
+                imgMain.Tag = matImage;
                 imgMain.Source = matImage.ToBitMap(curCorlor);
-                legend.setValue(new LegendModel() { name = "DEM", lowValue = (int)matImage.minData, highVlaue = (int)matImage.maxData, colors = curCorlor });
+                curLengend = new LegendModel() { name = "DEM", lowValue = (int)matImage.minData, highVlaue = (int)matImage.maxData, colors = curCorlor };
+                legend.setValue(curLengend);
             }
             else
             {

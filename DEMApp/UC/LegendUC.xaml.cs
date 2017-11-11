@@ -27,8 +27,8 @@ namespace DEMApp.UC
         public void setValue(LegendModel v)
         {
             this.Visibility = System.Windows.Visibility.Visible;
-            mainGrid.DataContext = v;
-            
+            mainGrid.DataContext = null;
+            mainGrid.DataContext = v;              
         }
     }
 
