@@ -27,6 +27,16 @@ namespace DEMApp.UC
         public void setValue(LegendModel v)
         {
             this.Visibility = System.Windows.Visibility.Visible;
+            if (!v.colors.classfied)
+            {
+                grd_classfied.Visibility = Visibility.Collapsed;
+                rect.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                grd_classfied.Visibility = Visibility.Visible;
+                rect.Visibility = Visibility.Collapsed;
+            }
             mainGrid.DataContext = null;
             mainGrid.DataContext = v;              
         }

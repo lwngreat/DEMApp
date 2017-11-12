@@ -41,7 +41,9 @@ namespace DEMApp.UC
             c.Reverse();
             colors.Add(new LinearColors(c));
             colors.Add(new LinearColors(c1));
-            colors.Add(new LinearColors(c2));
+            var lc2 = new LinearColors(c2);
+            lc2.classfied = true;
+            colors.Add(lc2);
             this.combColor.ItemsSource = colors;
             this.combColor.SelectedIndex = 0;
 
@@ -54,6 +56,17 @@ namespace DEMApp.UC
     public class LinearColors
     {
         private List<Color> colors;
+        public bool classfied = false;
+        public Visibility classfiedV
+        {
+            get
+            {
+                if (classfied)
+                    return Visibility.Visible;
+                else
+                    return Visibility.Collapsed;
+            }
+        }
         public LinearColors(List<Color> c)
         {
             colors = c;
@@ -93,10 +106,19 @@ namespace DEMApp.UC
                
                 Color c1 = colors[d];
                 Color c2 = colors[d + 1];
-                var r = (byte)Math.Round((m - d * 51) * (c2.R - c1.R) / 51.0 + c1.R);
-                var g = (byte)Math.Round((m - d * 51) * (c2.G - c1.G) / 51.0 + c1.G);
-                var b = (byte)Math.Round((m - d * 51) * (c2.B - c1.B) / 51.0 + c1.B);
-                return Color.FromRgb(r, g, b);
+                if (!classfied)
+                {
+                    var r = (byte)Math.Round((m - d * 51) * (c2.R - c1.R) / 51.0 + c1.R);
+                    var g = (byte)Math.Round((m - d * 51) * (c2.G - c1.G) / 51.0 + c1.G);
+                    var b = (byte)Math.Round((m - d * 51) * (c2.B - c1.B) / 51.0 + c1.B);
+                    return Color.FromRgb(r, g, b);
+                }
+                else
+                {
+                    return c1;
+                }
+                
+                
             }
             catch (Exception ex)
             {

@@ -9,19 +9,81 @@
         <ComboBox Grid.Column="5" x:Name="combColor" HorizontalAlignment="Stretch" >
             <ComboBox.ItemTemplate>
                 <DataTemplate >
-                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="White" Margin="3">                       
-                        <Rectangle HorizontalAlignment="Stretch" Height="20" Width="{Binding ElementName=mainGrid,Path=ActualWidth}" >
-                            <Rectangle.Fill>
-                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                    <GradientStop Color="{Binding color1}" />
-                                    <GradientStop Color="{Binding color2}" Offset="0.2"/>
-                                    <GradientStop Color="{Binding color3}" Offset="0.4"/>
-                                    <GradientStop Color="{Binding color4}" Offset="0.6"/>
-                                    <GradientStop Color="{Binding color5}" Offset="0.8"/>
-                                    <GradientStop Color="{Binding color6}" Offset="1"/>
-                                </LinearGradientBrush>
-                            </Rectangle.Fill>
-                        </Rectangle>
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="White" Margin="3">  
+                        <Grid>
+                            <Rectangle HorizontalAlignment="Stretch" Height="20" Width="{Binding ElementName=mainGrid,Path=ActualWidth}" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="{Binding color1}" />
+                                        <GradientStop Color="{Binding color2}" Offset="0.2"/>
+                                        <GradientStop Color="{Binding color3}" Offset="0.4"/>
+                                        <GradientStop Color="{Binding color4}" Offset="0.6"/>
+                                        <GradientStop Color="{Binding color5}" Offset="0.8"/>
+                                        <GradientStop Color="{Binding color6}" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </Grid>
+                        <Grid Name="gdClassified" Visibility="{Binding classfiedV}" HorizontalAlignment="Stretch" Grid.ColumnSpan="6" Height="20" Width="{Binding ElementName=mainGrid,Path=ActualWidth}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="{Binding color1}" />
+                                        <GradientStop Color="{Binding color1}" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Rectangle Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="{Binding color2}" />
+                                        <GradientStop Color="{Binding color2}" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Rectangle Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="{Binding color3}" />
+                                        <GradientStop Color="{Binding color3}" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Rectangle Grid.Column="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="{Binding color4}" />
+                                        <GradientStop Color="{Binding color4}" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Rectangle Grid.Column="4"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="{Binding color5}" />
+                                        <GradientStop Color="{Binding color5}" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Rectangle Grid.Column="5"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="{Binding color6}" />
+                                        <GradientStop Color="{Binding color6}" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </Grid>
+                        
+                        
                     </Grid>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
