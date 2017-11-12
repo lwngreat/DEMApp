@@ -37,13 +37,15 @@ namespace DEMApp.UC
             colors = new List<LinearColors>();
             List<Color> c = new List<Color> { Color.FromRgb(255, 255, 255), Color.FromRgb(204, 204, 204), Color.FromRgb(153, 153, 153), Color.FromRgb(102, 102, 102), Color.FromRgb(51, 51, 51), Color.FromRgb(0, 0, 0) };
             List<Color> c1 = new List<Color> { Color.FromRgb(177, 242, 213), Color.FromRgb(250, 250, 179), Color.FromRgb(15, 145, 52), Color.FromRgb(252, 186, 3), Color.FromRgb(112, 36, 8), Color.FromRgb(255, 255, 255) };
-            List<Color> c2 = new List<Color> { Color.FromRgb(177, 242, 213), Color.FromRgb(250, 250, 179), Color.FromRgb(15, 145, 52), Color.FromRgb(252, 186, 3), Color.FromRgb(112, 36, 8), Color.FromRgb(255, 255, 255) };
+            List<Color> c2 = new List<Color> { Color.FromRgb(196, 86, 59), Color.FromRgb(240, 177, 17), Color.FromRgb(255, 255, 0), Color.FromRgb(130, 237, 0), Color.FromRgb(32, 153, 143), Color.FromRgb(11, 44, 122) };
+            List<Color> c3 = new List<Color> { Color.FromRgb(196, 86, 59), Color.FromRgb(240, 177, 17), Color.FromRgb(255, 255, 0), Color.FromRgb(130, 237, 0), Color.FromRgb(32, 153, 143), Color.FromRgb(11, 44, 122) };
             c.Reverse();
             colors.Add(new LinearColors(c));
             colors.Add(new LinearColors(c1));
-            var lc2 = new LinearColors(c2);
-            lc2.classfied = true;
-            colors.Add(lc2);
+            colors.Add(new LinearColors(c2));
+            var lc3 = new LinearColors(c3);
+            lc3.classfied = true;
+            colors.Add(lc3);
             this.combColor.ItemsSource = colors;
             this.combColor.SelectedIndex = 0;
 
