@@ -14,10 +14,10 @@ namespace DEMApp.BLL
             oMatImage = origionMatImage;  
         }
         /// <summary>
-        /// 度数法表示
+        /// 百分比表示
         /// </summary>
         /// <returns></returns>
-        public MatImage calSlope() {
+        public MatImage calSlope2() {
             MatImage slope = new MatImage(oMatImage.ncols, oMatImage.nrows, oMatImage.xllcorner, oMatImage.yllcorner, oMatImage.cellsize);
             for (int i = 1; i < oMatImage.nrows - 1; i++)
             {
@@ -37,7 +37,7 @@ namespace DEMApp.BLL
                     {
                         var we = (valueBefor - valueAfter) / (2 * oMatImage.cellsize);
                         var sn = (valueDown - valueUp) / (2 * oMatImage.cellsize);
-                        slope.data[i][j] = Math.Sqrt(sn * sn + we * we)*180/Math.PI;
+                        slope.data[i][j] = Math.Sqrt(sn * sn + we * we)*100;       //%
                     }
 
                 }
@@ -46,10 +46,10 @@ namespace DEMApp.BLL
         
         }
         /// <summary>
-        /// 百分比表示
+        /// 度数法表示
         /// </summary>
         /// <returns></returns>
-        public MatImage calSlope2()
+        public MatImage calSlope()
         {
             MatImage slope = new MatImage(oMatImage.ncols, oMatImage.nrows, oMatImage.xllcorner, oMatImage.yllcorner, oMatImage.cellsize);
             for (int i = 1; i < oMatImage.nrows - 1; i++)
@@ -70,7 +70,7 @@ namespace DEMApp.BLL
                     {
                         var we = (valueBefor - valueAfter) / (2 * oMatImage.cellsize);
                         var sn = (valueDown - valueUp) / (2 * oMatImage.cellsize);
-                        slope.data[i][j] = Math.Sqrt(sn * sn + we * we) * 180 / Math.PI;
+                        slope.data[i][j] = Math.Atan(Math.Sqrt(sn * sn + we * we)) * 180.0 / Math.PI;
                     }
 
                 }
