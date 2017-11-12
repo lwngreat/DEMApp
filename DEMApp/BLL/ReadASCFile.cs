@@ -8,10 +8,18 @@ using System.Windows.Forms;
 
 namespace DEMApp.BLL
 {
+    /// <summary>
+    /// 读取asc到内存
+    /// </summary>
     public class ReadASCFile
     {
         public delegate void LoadDataFinishedHandler(double per, string msg);
         public static event LoadDataFinishedHandler DataLoadState;
+        /// <summary>
+        /// 进度更新
+        /// </summary>
+        /// <param name="per"></param>
+        /// <param name="msg"></param>
         public static void UpdateLoadState(double per, string msg = "")
         {
             if (DataLoadState != null)

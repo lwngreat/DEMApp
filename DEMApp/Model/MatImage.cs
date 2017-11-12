@@ -11,8 +11,7 @@ using System.Windows.Media.Imaging;
 namespace DEMApp.Model
 {
     public class MatImage
-    {
-
+    {   
         public int ncols;
         public int nrows;
         public double xllcorner;
@@ -39,8 +38,7 @@ namespace DEMApp.Model
                 }
                 
             }
-        }
-
+        }     
         private double _minData;
         public double minData
         {
@@ -119,7 +117,7 @@ namespace DEMApp.Model
                 data.Add(aRowList);
             }
         }
-        //public Image bitmap = new Bitmap(towidth, toheight);
+        
         public ImageSource ToBitMap(LinearColors colors)
         {
             try

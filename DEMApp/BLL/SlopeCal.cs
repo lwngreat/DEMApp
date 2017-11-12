@@ -6,6 +6,9 @@ using System.Text;
 
 namespace DEMApp.BLL
 {
+    /// <summary>
+    /// 坡度坡向计算
+    /// </summary>
     public class SlopeCal
     {
         private MatImage oMatImage;

@@ -24,7 +24,6 @@
                 projection: "EPSG:900913",
                 maxZoom: 19,
                 minZoom: 9
-
             })
         });
         that.map.on('pointermove', function (evt) {

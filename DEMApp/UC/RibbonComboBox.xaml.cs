@@ -48,6 +48,9 @@ namespace DEMApp.UC
         }
 
     }
+    /// <summary>
+    /// 色带模型，必须加入6个
+    /// </summary>
     public class LinearColors
     {
         private List<Color> colors;

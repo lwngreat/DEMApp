@@ -24,10 +24,9 @@ namespace DEMApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string filePath;
-        private MatImage matImage;
-        private LinearColors curCorlor;
-        private LegendModel curLengend;
+        private MatImage matImage;   //DEM 图像
+        private LinearColors curCorlor;    //当前选中色带
+        private LegendModel curLengend;    //当前图例信息
         public MainWindow()
         {
             InitializeComponent();
@@ -71,7 +70,7 @@ namespace DEMApp
             {
                 try
                 {
-                    filePath = oFileDialog.FileName;
+                    string filePath = oFileDialog.FileName;
                     matImage = ReadASCFile.read(filePath);
                     imgMain.Tag = matImage;
                     imgMain.Source = matImage.ToBitMap(curCorlor);
