@@ -103,28 +103,46 @@ namespace DEMApp.UC
             var d = m / 51;
             try
             {
-               
+                if (classfied)
+                {
+                    return getColorClassified(m);
+                }
+
                 Color c1 = colors[d];
                 Color c2 = colors[d + 1];
-                if (!classfied)
-                {
-                    var r = (byte)Math.Round((m - d * 51) * (c2.R - c1.R) / 51.0 + c1.R);
-                    var g = (byte)Math.Round((m - d * 51) * (c2.G - c1.G) / 51.0 + c1.G);
-                    var b = (byte)Math.Round((m - d * 51) * (c2.B - c1.B) / 51.0 + c1.B);
-                    return Color.FromRgb(r, g, b);
-                }
-                else
-                {
-                    return c1;
-                }
-                
-                
+
+                var r = (byte)Math.Round((m - d * 51) * (c2.R - c1.R) / 51.0 + c1.R);
+                var g = (byte)Math.Round((m - d * 51) * (c2.G - c1.G) / 51.0 + c1.G);
+                var b = (byte)Math.Round((m - d * 51) * (c2.B - c1.B) / 51.0 + c1.B);
+                return Color.FromRgb(r, g, b);
+
+
+
+            }
+            catch (Exception ex)
+            {
+                return Colors.Black;
+            } 
+        }
+        /// <summary>
+        /// 分类渲染
+        /// </summary>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        private Color getColorClassified(int m)
+        {
+            if (m < 0 || m > 255) return Colors.Black;
+            if (m == 255) return color6;
+            var intval = 255 / 6;
+            var d = m / intval;
+            try
+            {
+                return colors[d];
             }
             catch (Exception ex)
             {
                 return Colors.Black;
             }
-            
         }
     }
 }
